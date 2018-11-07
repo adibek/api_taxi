@@ -1149,3 +1149,40 @@ response:
 
 
 
+```
+
+
+# Logout
+## path:     Base URL  + logout/
+
+```
+fields:{
+    token
+}
+response:
+{
+    state
+}
+
+
+```
+
+
+# Запрос на узнавание количества чатов водителя
+
+## path:     Base URL  + how-many-chats/
+
+```
+fields:{
+    token
+}
+response:
+{
+    state
+    show_chat : true ili false
+}
+
+
+```
+
+
