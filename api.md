@@ -13,12 +13,18 @@
 
 ### Режимы такси (order_type)
 
-* taxi - 1
-* lady taxi - 2
-* инва taxi - 3
-* межгорож - 4 
-* грузоперевозка - 5
-* эвакуатор - 6
+Такси:
+* 1-эконом
+* 2-комфорт
+* 3-кк
+* 4-леди
+* 5-трезвый водитель
+
+Остальное:
+* 1-межгород
+* 2-грузотакси
+* 3-эвакуатор
+* 4-инватакси
 
 ### Роли пользователей:
 
@@ -491,7 +497,9 @@ fields:{
 	"service_id",    
 	"comment", 		 optional
 	"date",		    optional
-	"payment_type" 
+	"payment_type",
+	kpp,  ТИП КПП - 0-автомат, 2-механика (если это трезвый водитель)
+
 }
 response:
 {
@@ -1175,6 +1183,31 @@ response:
 ```
 fields:{
     token
+}
+response:
+{
+    state
+    show_chat : true ili false
+}
+
+
+```
+
+
+
+# Запрос на цену заявки трезвый водитель
+
+## path:     Base URL  + get-trezvy-price/
+
+```
+fields:{
+    token,
+    latitude_a,   | 
+    longitude_a,   -> откуда координаты
+    latitude_b,   |
+    longitude_b,   -> куда координаты
+    comment
+    
 }
 response:
 {
